@@ -1,0 +1,26 @@
+html{
+  width:80%;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 30px;
+}
+
+.topp{
+	margin-top: 12px;
+}
+.ll{
+	margin-left:20px;
+}
+.rr{
+	margin-right:20px;
+}
+
+.back{
+	height:100px;
+	margin-left:5%;
+	margin-right: 5%;
+	display:block;
+	background-color:#E6E6FA;
+	/*border-radius: 12px;
+	border:2px solid;*/
+}
