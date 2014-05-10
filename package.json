@@ -1,0 +1,22 @@
+{
+  "name": "2014F_CCSP_Final",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:oldwang/2014_CCSP_Final.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oldwang/2014_CCSP_Final.git"
+  },
+  "homepage": "https://github.com/oldwang/2014_CCSP_Final",
+  "dependencies": {
+    "express": "^3.5.2"
+  }
+}
