@@ -16,6 +16,7 @@
 }
 html {
   font-family: sans-serif;
+
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -680,7 +681,7 @@ select.unit-100 {
 .units-row .unit-25:first-child,
 .units-row .unit-20:first-child,
 .units-row .unit-10:first-child {
-  margin-left: 0;
+  margin-left: 0%;
 }
 .units-row .unit-90 {
   width: 89.7%;
@@ -692,7 +693,7 @@ select.unit-100 {
   width: 74.25%;
 }
 .units-row .unit-70 {
-  width: 69.1%;
+  width: 59.1%; /*69.1%*/
 }
 .units-row .unit-66 {
   width: 65.66666666666666%;
@@ -716,7 +717,7 @@ select.unit-100 {
   width: 31.333333333333332%;
 }
 .units-row .unit-30 {
-  width: 27.9%;
+  width: 17.9%; /*27.9%*/
 }
 .units-row .unit-25 {
   width: 22.75%;

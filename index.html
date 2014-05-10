@@ -5,43 +5,92 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="css/kube.min.css" />
+    <link rel="stylesheet" href="css/kube.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div><h1>P-book</h1></div>
-
-<header class="group">
-<p class="input-groups width-30 topp navbar-left">
-    <input type="text" name="go" placeholder="Search by ID" />
-    <span class="btn-append">
-        <button class="btn btn-blue">Search</button>
-    </span>
-</p>
-<div class="navbar-right topp">
-<button class="btn btn-black ">Sign in</button>
+<div class="">
+<header class="group ">
+<div class="">
+    <h3 class="white"><div class="blue text-centered navbar-left">P</div></h3>
+    <p class="input-groups width-20 left">
+        <input type="text" name="go" placeholder="Search by ID" />
+        <span class="btn-append">
+            <button class="btn btn-blue">Search</button>
+        </span>
+    </p>
+    <button class="btn btn-green left">Sign in</button>
 </div>
 </header>
-<hr>
 
-<center>
-    <h1>Hello, world!</h1>
-</center>
+</div>
+<hr class="location">
+
 
 <div class="back">
     <div class="navbar-left topp ll"><h1>ID:<span>chanhou</span></h1><h3>IP:<span>140.112.xx</span></h3></div>
-    <div class="navbar-right topp rr">
-        <button class="btn btn-white btn-disabled">發文數</button>
-        <button class="btn btn-white btn-disabled">推文數</button>
-        <button class="btn btn-white btn-disabled">噓文數</button>
-        <button class="btn btn-white btn-disabled">被刪除數</button>
+    <table class="table-flat ">
+        <tr class="text-centered">
+            <td><button class="btn btn-white btn-disabled l topp">發文數</button></td>
+            <td><button class="btn btn-white btn-disabled left topp">推文數</button></td>
+            <td><button class="btn btn-white btn-disabled left topp">噓文數</button></td>
+            <td><button class="btn btn-white btn-disabled left topp">被刪除數</button></td>
+        </tr>
+        <tr class="text-centered">
+            <td class="center"><button class="btn btn-white btn-disabled l topp">13</button></td>
+            <td class="center"><button class="btn btn-white btn-disabled topp">22</button></td>
+            <td class="center"><button class="btn btn-white btn-disabled topp">1</button></td>
+            <td class="center"><button class="btn btn-white btn-disabled topp">0</button></td>
+        </tr>
+    </table>
+</div>
+
+<div class="units-row white toppp">
+    <div class="unit-70 "><h2 class="white">WoW Timeline!</h2>
+
+   <!--  <div id="iiif">
+        <iframe id="ifr" src="" seamless></iframe>
+    </div> -->
+
+    <div class="">
+    <table class="table-stripped width-100">
+        <thead>
+            <tr>
+                <th class="">看板</th>
+                <th>Title</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="fontt">八卦</td>
+                <td class="fontt yellow">推</td>
+                <td class="">
+                    <div class="fonttt"><a href="" id="link">hahahahahahahahahahahhahahahahaha</a></div>
+                    <div class=""><cite>2012.4.5</cite></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="fontt">八卦</td>
+                <td class="fontt yellow">發</td>
+                <td class="">
+                    <div class="fonttt">yyy</div>
+                    <div class=""><cite>2013.4.5</cite></div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    </div>
     </div>
 </div>
 
-<div class="units-row">
-    <div class="unit-40">Time line</div>
-    <div class="unit-20">Chat room</div>
-</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/jjs.js"></script>
+
 
 </body>
 </html>
