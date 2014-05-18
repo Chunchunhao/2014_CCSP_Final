@@ -12,8 +12,8 @@ var pushArr = [];
 
 var pageNext, page_count=0, page_total=0;
 
-// Run the scraper!
-pttTraversal(4443, 4441);
+// Run the scraper! 
+pttTraversal("index", 4467);
 
 // start_page: 起始頁數 ex. index, 4057.   end_page:結束頁 ex. 4000
 function pttTraversal(start_page, end_page){
@@ -31,7 +31,6 @@ function pttTraversal(start_page, end_page){
 		if(!e && r.statusCode == 200){
 			var html = cheerio.load(b);
 			pageNext = PPTPathPrefix + html('.pull-right').find('a').eq(1).attr('href');
-			console.log("pageNext: ", pageNext);
 			pageNext = pageNext.match(/\d{1,4}/g);
 			page_buf = html('.r-ent');
 			page_buf.each(function(i, ele){
@@ -47,8 +46,7 @@ function pttTraversal(start_page, end_page){
 			page_total = pages.length;
 			console.log("page_total: " + page_total + " at page: " + this_page);
 			for(var i=0; i<page_total; i++){
-				//var seed = Math.floor((Math.random()+1)*10)*100;
-				setTimeout( scrape(pages[i].url, pages[i].status), 1000*i);
+				setTimeout( scrape, 1000*i, pages[i].url, pages[i].status);
 			}
 		}else{
 			console.log("Page Request Error at " + pageURL);
@@ -95,6 +93,9 @@ function scrape(url, status){
 			buf.each(function(i, ele){
 				if(i == 0){
 					id = $(this).find('.article-meta-value').text();
+					var indie = id.search(" ");
+					if(indie != -1)
+						id = id.slice(0, indie);
 				}else if(i == 1){
 					title = $(this).find('.article-meta-value').text();
 				}else{
@@ -106,16 +107,16 @@ function scrape(url, status){
 
           	// 處理 url 和 ip by RegExp 
 			var buff = $('span.f2');
-			var regExp_ip = /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/g,
-				//regExp_url = /http:\/\/www\.ptt\.cc\/bbs\/Gossiping\/[A-Z]\.\d{10}\.[A-Z]\.\d{3}\.html/g;
-				link = pttGossipPath;
+			var regExp_ip = /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/g;
+			
+			link = pttGossipPath;
+
 			buff.each(function(i, ele){
 				var text_ip = $(this).text();
-					//text_url = $(this).find('a').text();
-				if(regExp_ip.test(text_ip))
-					ip = text_ip.match(regExp_ip); 
-				// if(regExp_url.test(text_url))
-				// 	link = text_url.match(regExp_url); 
+				if(regExp_ip.test(text_ip)){
+					var ip_buf = text_ip.match(regExp_ip);
+					ip = ip_buf[0]; 
+				}
 			});
 
 			var post = {
@@ -232,7 +233,7 @@ function scrape(url, status){
 			page_count++;
 			console.log("page_count: ", page_count);
 		}else{
-			console.log("Requset Error at: " + url);
+			console.log("Requset Error at: " + pttGossipPath);
 			console.log("Response StatusCode: " + response.statusCode);
 			throw error;
 		}
