@@ -13,7 +13,7 @@ var pushArr = [];
 var pageNext, page_count=0, page_total=0;
 
 // Run the scraper! 
-pttTraversal("index", 4467);
+pttTraversal("index", 1);
 
 // start_page: 起始頁數 ex. index, 4057.   end_page:結束頁 ex. 4000
 function pttTraversal(start_page, end_page){
@@ -46,16 +46,21 @@ function pttTraversal(start_page, end_page){
 			page_total = pages.length;
 			console.log("page_total: " + page_total + " at page: " + this_page);
 			for(var i=0; i<page_total; i++){
-				setTimeout( scrape, 1000*i, pages[i].url, pages[i].status);
+				setTimeout( scrape, 250*i, pages[i].url, pages[i].status);
 			}
 		}else{
 			console.log("Page Request Error at " + pageURL);
-			throw e;
+			console.log("Resend the Request at " + pageURL);
+			pttTraversal(start_page, end_page);
 		}
 	});
-
+	var lock;
+	console.log("lock: " + lock);
 	var si = setInterval(function(){
-		if(page_count == page_total){
+		if((page_count == page_total) && page_total != 0 && !lock){
+			console.log("page_count: " + page_count + ", page_total: " + page_count);
+			lock = true;
+			console.log("lock: " + lock);
 			clearInterval(si);
 			if(this_page == end_page){
 				fs.writeFile('gossip.json', JSON.stringify(pushArr, null, 2), 'utf8', function(err){
@@ -80,7 +85,7 @@ function scrape(url, status){
 
 	var pttGossipPath = "http://www.ptt.cc" + url;
 
-	var j = request.jar()
+	var j = request.jar();
 	var cookie = request.cookie('over18=1');
 	j.setCookie(cookie, pttGossipPath);
 
@@ -105,7 +110,7 @@ function scrape(url, status){
 
 			bbs = $('div.article-metaline-right').find('.article-meta-value').text();
 
-          	// 處理 url 和 ip by RegExp 
+      // 處理 url 和 ip by RegExp 
 			var buff = $('span.f2');
 			var regExp_ip = /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/g;
 			
@@ -231,11 +236,26 @@ function scrape(url, status){
 
 		  	});
 			page_count++;
-			console.log("page_count: ", page_count);
+			console.log("page_count: " + page_count + ", with url: " + link);
 		}else{
 			console.log("Requset Error at: " + pttGossipPath);
-			console.log("Response StatusCode: " + response.statusCode);
-			throw error;
+
+			if(!response){
+				console.log("Resend Scrape.js at " + url);
+				fs.writeFile('gossip.json', JSON.stringify(pushArr, null, 2), 'utf8', function(err){
+					if(err){
+						console.log("Write Error");
+						throw err;
+					}
+					console.log("Write File Successfully!");
+					scrape(url, status);
+				});
+			}else{
+				if(response.statusCode == 404){
+					console.log("Response StatusCode: " + response.statusCode);
+					page_total -= 1;
+				}
+			}
 		}
 	});
 }
