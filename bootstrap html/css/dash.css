@@ -71,13 +71,13 @@ body {
  */
 
 .main {
-  padding: 20px;
+  padding: 10px;
 }
 @media (min-width: 768px) {
   .main {
-    padding-right: 40px;
+/*    padding-right: 40px;
     padding-left: 40px;
-  }
+*/  }
 }
 .main .page-header {
   margin-top: 0;
@@ -129,7 +129,7 @@ body {
 }
 
 /* Helper Class: Container */
-.row {
+/*.row {
   *zoom: 1;
   max-width: 50.25em;
   _width: 50.25em;
@@ -143,7 +143,7 @@ body {
   display: table;
   clear: both;
 }
-
+*/
 article,
 main,
 {
@@ -153,7 +153,9 @@ main,
 .blog-item-list {
   position: relative;
 /*  padding: 1.75em 0;
-*/  border-bottom: 4px solid #F7F7F7;
+  border-bottom: 4px solid #F7F7F7;
+*/
+  margin-bottom: -6%;
 }
 .blog-item-list .article-main, .blog-item-list .blog-footer {
   margin-right: 2em;

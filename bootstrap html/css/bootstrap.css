@@ -759,6 +759,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 30px;
 }
 .row {
   margin-right: -15px;
@@ -2380,6 +2381,21 @@ input[type="button"].btn-block {
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+@font-face {
+    font-family: 'xingshu';
+    src: url('../fonts/DFXingShuMedium1B.ttf') format('truetype');
+
+/*    font-weight: normal;
+    font-style: normal;
+*/}
+
+@font-face {
+  font-family: 'xingshuu';
+
+    src: url('../fonts/xingshu.ttf') format('truetype');
+}
+
+
 .glyphicon {
   position: relative;
   top: 1px;
@@ -4023,7 +4039,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #333;
 }
 .navbar-inverse {
-  background-color: rgba(34,34,34,0.8);
+  background-color: rgba(59,63,67,0.8);
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {

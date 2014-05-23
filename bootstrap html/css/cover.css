@@ -55,6 +55,11 @@ hr{
   margin-left: -50px;
 }
 
+.xing{
+  font-family: "xingshu";
+font-size: 60px;
+}
+
 /*table showing*/
 .fontt{
   font-size:25px;
@@ -264,3 +269,6 @@ text-shadow:0px 0px 0 rgb(184,184,184),1px 1px 0 rgb(163,163,163),2px 2px 0 rgb(
   box-shadow: 0px 0px 15px 4px #f29c9c;
 }
 
+table td th{
+  border:0px;
+}
