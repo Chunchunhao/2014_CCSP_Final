@@ -1,19 +1,23 @@
 {
-  "name": "flat-ui",
-  "version": "2.1.3",
-  "description": "Flat UI Free is made on the basis of Twitter Bootstrap in a stunning flat-style",
+  "name": "Flat-UI-master",
+  "version": "0.0.0",
+  "description": "p-book website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/designmodo/Flat-UI.git"
+    "url": "https://github.com/oldwang/2014_CCSP_Final.git"
   },
-  "keywords": [
-    "ui",
-    "flat",
-    "bootstrap"
-  ],
-  "author": "designmodo",
-  "license": "CC BY 3.0 and MIT",
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/designmodo/Flat-UI/issues"
+    "url": "https://github.com/oldwang/2014_CCSP_Final/issues"
+  },
+  "homepage": "https://github.com/oldwang/2014_CCSP_Final",
+  "dependencies": {
+    "express": "^3.8.0",
+    "ejs": "^1.0.0"
   }
 }
