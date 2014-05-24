@@ -1,2 +1,3 @@
-node_nodule
-db
+node_module/
+db/
+
