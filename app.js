@@ -1,17 +1,59 @@
+/**
+ * Module dependencies.
+ */
+
 var express = require('express');
-var controllers = require('./controllers/control')
+var http = require('http');
+var path = require('path');
+var flash = require('connect-flash');
+var mongoose = require('mongoose');
+var passport = require('passport');
 
-var host = '127.0.0.1';
-var port = 5000;
+// require('./models/db.js'); // TODO [DB] : Connect to database
+// require('./controllers/passport.js'); // TODO [FB] : Passport configuration
 
-express()
-.use(express.static(__dirname+"/"))//get static file
-.use(express.bodyParser())
-.get('/search/:id',controllers.searchId)
-.listen(port, host);
+var app = express();
+// var Vote = mongoose.model('Vote'); // TODO [DB] : Get Vote model
+
+// all environments
+app.set('port', process.env.PORT || 3000);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+// app.use > sequential middleware
+app.use(express.favicon()); //As far as I can tell, it loads the /favicon.ico file from your site
+                            // (like it would if you have the static handler loaded) but then caches it.
+app.use(express.logger('dev')); // store each http request
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(express.methodOverride());
+//app.use(express.cookieParser(process.env.COOKIE_SECRET));
+app.use(express.cookieParser("abcdefghijklmnopqrstuvwxyz"));
+app.use(express.session());
+
+// https://github.com/jaredhanson/passport#middleware
+app.use(passport.initialize());
+app.use(passport.session());
+// Session based flash messages
+app.use(flash());
+
+app.use(app.router);
+app.use(express.static(path.join(__dirname, 'public')));
+
+// development only
+if ('development' == app.get('env')) {
+  app.use(express.errorHandler());
+}
+
+app.get('/', function(req, res){
+  res.render('index');
+});
+
+app.get('/s', function(req, res){
+  res.render('main');
+});
 
 
-// .post('/items',controllers.addItem)
-// .put('/items/:id',controllers.updateItem)
-// .put('/items/:id/reposition/:new_position',controllers.repoItem)
-// .delete('/items/:id',controllers.deleteItem)
+
+http.createServer(app).listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
+});
