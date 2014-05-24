@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>P-book</title>
+
+    <!-- Bootstrap core CSS -->
+   <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+   <link href="css/flat-ui.css" rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="css/jquery-ui-1.10.4.custom.css">
+ <!-- Custom styles for this template -->
+     <link href="css/coverMain.css" rel="stylesheet">
+    <link href="css/dash.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- ============fancybox=============== -->
+<!-- Add fancyBox main JS and CSS files -->
+  <link rel="stylesheet" type="text/css" href="fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+  <!-- Add Button helper (this is optional) -->
+  <link rel="stylesheet" type="text/css" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+  <!-- Add Thumbnail helper (this is optional) -->
+  <link rel="stylesheet" type="text/css" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+  </head>
+
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- navbar-default -->
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">        
+            <img src="images/title.png" class="imgTitle" alt="gggg">
+          </a>
+        </div>
+        <div class="navbar-collapse collapse">
+
+            <!-- <div class="input-group input-group-sm"> -->
+              <form class="navbar-form navbar-left llll">
+                <input type="text" class="form-control" placeholder="Search Ptt id">
+              </form>
+            <!-- </div> -->
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          
+        </div><!--/.nav-collapse -->
+      </div>  <!-- container -->
+    </div> <!-- navbar -->
+
+<ul class="nav nav-tabs topp cover">
+  <li class="active"><a href="#home" data-toggle="tab"><span class="glyphicon glyphicon-user "></span>
+    <%= name %><!-- email5566 --></a>
+  </li>
+  <li><a href="#profile" data-toggle="tab">people1</a></li>
+  <li><a href="#messages" data-toggle="tab">people2</a></li>
+</ul>
+
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="home">
+    <div class="arrow-up"></div>
+    <div class="container-fluid">
+
+
+<!-- data -->
+<!-- ===================================================================== -->
+      <div class="bb">
+        
+        <div class="row top">
+
+          <div class="col-md-6 borderOnly col-md-offset-1 topp">
+            <div class="col-md-3 main  ">
+              <span class="glyphicon glyphicon-user s30"></span> 
+              <div class="">
+                <div class="ffff">
+                  <%= name %>
+                  <!-- email5566 -->
+                </div> <!-- page-header -->
+              </div>
+            </div>
+            <div class="col-md-3 main s20">
+              <div class="">
+              <div>
+                <span class="glyphicon glyphicon-map-marker"></span><%= ip1 %><!-- 140.112.xx -->
+              </div>
+              <div>
+                <span class="glyphicon glyphicon-map-marker"></span><%= ip2 %><!-- 140.112.xx -->
+              </div>
+              <div>
+                <span class="glyphicon glyphicon-map-marker"></span><%= ip3 %><!-- 140.112.xx -->
+              </div>
+              </div>
+            </div>  <!-- col-md-3 -->
+            <div class="col-md-3 main s20">
+              <div>
+                <span class="glyphicon glyphicon-tag yellow"></span>發
+                <span class="label label-danger left">
+                  <%= postNum %><!-- 41 -->
+                </span>
+              </div>
+              <div>
+                <span class="glyphicon glyphicon-tag yellow"></span>推
+                <span class="label label-danger left">
+                  <%= pushNum %><!-- 19 -->
+                </span>
+              </div>
+              <div>
+                <span class="glyphicon glyphicon-tag red"></span>噓
+                <span class="label label-danger left">
+                  <%= xuNum %><!-- 50 -->
+                </span>
+              </div>
+            </div> <!-- col-md-3 -->
+            <div class="col-md-3 main s20">
+              <div>
+                人氣
+                <span class="label label-danger left">
+                  <%= fansNum %><!-- 41 -->
+                </span>
+              </div>
+            </div> <!-- col-md-3 -->
+          </div> <!-- col-md-6 container of details -->
+
+          <div class="col-md-1 col-md-offset-1 top  main">
+            <div class="borr">
+              <div class="ffff">
+                <span class="glyphicon glyphicon-comment"></span>
+              </div> <!-- page-header -->
+            </div>
+          </div>
+          <div class="col-md-1 top main">
+            <div class="borr">
+              <div class="ffff">
+                <span class="glyphicon glyphicon-stats"></span>
+              </div> <!-- page-header -->
+            </div>
+          </div>
+
+      </div> <!-- row -->
+
+
+<!-- news part -->
+<!-- ================================================= -->
+      <div class="row top">
+        <div class="col-md-8 ">
+          <div class="col-md-8 col-md-offset-1 ">
+            <div class="table-responsive top">
+                <table class="table ">
+                    <tbody>
+                        <tr>
+                          <td> <span class="glyphicon glyphicon-hand-right"></span></td>
+                            <td class="fontt">八卦</td>
+                            <td class="fontt red">噓</td>
+                            <td class="">
+                                <div class="fonttt text-left"><a class="various fancybox.iframe" href="http://www.ptt.cc/bbs/Gossiping/M.1400086656.A.A2A.html">[新聞] 不愛吃雞排？熊寶貝可以吃牛丼！</a></div>
+                                <div class="grey text-left"><cite>2014.5.10</cite></div>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td> <span class="glyphicon glyphicon-hand-right"></span></td>
+                            <td class="fontt">八卦</td>
+                            <td class="fontt red">噓</td>
+                            <td class="">
+                                <div class="fonttt text-left">[新聞] WEGO！熱炒店集合！</div>
+                                <div class="grey text-left"><cite>2014.5.8</cite></div>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td> <span class="glyphicon glyphicon-hand-right"></span></td>
+                            <td class="fontt">八卦</td>
+                            <td class="fontt red">→</td>
+                            <td class="">
+                                <div class="fonttt text-left">[新聞] 反核，不忘吃宵夜</div>
+                                <div class="grey text-left"><cite>2014.5.2</cite></div>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td> <span class="glyphicon glyphicon-hand-right"></span></td>
+                            <td class="fontt ">八卦</td>
+                            <td class="fontt  yellow">推</td>
+                            <td class="">
+                                <div class="fonttt text-left">[問卦] email怎麼越來越胖了</div>
+                                <div class="grey text-left"><cite>2014.4.5</cite></div>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td> <span class="glyphicon glyphicon-hand-right"></span></td>
+                            <td class="fontt ">八卦</td>
+                            <td class="fontt yellow ">R: </td>
+                            <td class="">
+                                <div class="fonttt text-left">R: [爆卦] TVBS的採訪真噁心</div>
+                                <div class="grey text-left"><cite>2014.3.21</cite></div>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td> <span class="glyphicon glyphicon-hand-right"></span></td>
+                            <td class="fontt">八卦</td>
+                            <td class="fontt yellow">發</td>
+                            <td class="">
+                                <div class="fonttt text-left">[爆卦] 關於日月明功 等等三立有專訪</div>
+                                <div class="grey text-left"><cite>2013.12.05</cite></div>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td> <span class="glyphicon glyphicon-hand-right"></span></td>
+                            <td class="fontt">八卦</td>
+                            <td class="fontt yellow">發</td>
+                            <td class="">
+                                <div class="fonttt text-left">[爆卦] 關於日月明功 等等三立有專訪</div>
+                                <div class="grey text-left"><cite>2013.12.05</cite></div>
+                            </td>
+                        </tr><tr>
+                        <td> <span class="glyphicon glyphicon-hand-right"></span></td>
+                            <td class="fontt">八卦</td>
+                            <td class="fontt yellow">發</td>
+                            <td class="">
+                                <div class="fonttt text-left">[爆卦] 關於日月明功 等等三立有專訪</div>
+                                <div class="grey text-left"><cite>2013.12.05</cite></div>
+                            </td>
+                        </tr><tr>
+                        <td> <span class="glyphicon glyphicon-hand-right"></span></td>
+                            <td class="fontt">八卦</td>
+                            <td class="fontt yellow">發</td>
+                            <td class="">
+                                <div class="fonttt text-left">[爆卦] 關於日月明功 等等三立有專訪</div>
+                                <div class="grey text-left"><cite>2013.12.05</cite></div>
+                            </td>
+                        </tr><tr>
+                        <td> <span class="glyphicon glyphicon-hand-right"></span></td>
+                            <td class="fontt">八卦</td>
+                            <td class="fontt yellow">發</td>
+                            <td class="">
+                                <div class="fonttt text-left">[爆卦] 關於日月明功 等等三立有專訪</div>
+                                <div class="grey text-left"><cite>2013.12.05</cite></div>
+                            </td>
+                        </tr><tr>
+                        <td> <span class="glyphicon glyphicon-hand-right"></span></td>
+                            <td class="fontt">八卦</td>
+                            <td class="fontt yellow">發</td>
+                            <td class="">
+                                <div class="fonttt text-left">[爆卦] 關於日月明功 等等三立有專訪</div>
+                                <div class="grey text-left"><cite>2013.12.05</cite></div>
+                            </td>
+                        </tr><tr>
+                        <td> <span class="glyphicon glyphicon-hand-right"></span></td>
+                            <td class="fontt">八卦</td>
+                            <td class="fontt yellow">發</td>
+                            <td class="">
+                                <div class="fonttt text-left">[爆卦] 關於日月明功 等等三立有專訪</div>
+                                <div class="grey text-left"><cite>2013.12.05</cite></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>  <!-- table -->
+            </div> <!-- col-md-12 table data container -->
+          </div> <!-- col-md-8 table container-->
+        </div> <!-- row -->
+      </div>  <!-- bb background -->
+    </div> <!-- container-fluid -->
+  </div> <!-- home -->
+
+  <div class="tab-pane" id="profile">...</div>
+  <div class="tab-pane" id="messages">...</div>
+  <div class="tab-pane" id="settings">...</div>
+</div>
+
+
+
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <!-- Add jQuery library -->
+      <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-switch.js"></script>
+    <script src="js/flatui-checkbox.js"></script>
+    <script src="js/flatui-radio.js"></script>
+    <script src="js/jquery.tagsinput.js"></script>
+    <script src="js/jquery.placeholder.js"></script>
+    <script src="js/jquery.stacktable.js"></script>
+    <script src="http://vjs.zencdn.net/4.3/video.js"></script>
+    <script src="js/application.js"></script>
+
+ <!-- =====my js==== -->
+  <script type="text/javascript" src="js/index.js"></script>
+
+
+<!-- fancy box============================================== -->
+
+  <!-- Add mousewheel plugin (this is optional) -->
+  <script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+  <!-- Add fancyBox main JS and CSS files -->
+  <script type="text/javascript" src="fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+
+  <!-- Add Button helper (this is optional) -->
+  <script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+  <!-- Add Thumbnail helper (this is optional) -->
+  <script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+  <!-- Add Media helper (this is optional) -->
+  <script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+  </body>
+</html>
