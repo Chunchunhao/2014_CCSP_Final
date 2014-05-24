@@ -3,7 +3,7 @@
 
 <ul class="nav nav-tabs topp cover">
   <li class="active"><a href="#home" data-toggle="tab"><span class="glyphicon glyphicon-user "></span>
-    <%= name %><!-- email5566 --></a>
+    <%= id %><!-- email5566 --></a>
   </li>
   <li><a href="#profile" data-toggle="tab">people1</a></li>
   <li><a href="#messages" data-toggle="tab">people2</a></li>
@@ -28,41 +28,35 @@
               <span class="glyphicon glyphicon-user s30"></span> 
               <div class="">
                 <div class="ffff">
-                  <%= name %>
+                  <%= id %>
                   <!-- email5566 -->
                 </div> <!-- page-header -->
               </div>
             </div>
             <div class="col-md-3 main s20">
               <div class="">
-              <div>
-                <span class="glyphicon glyphicon-map-marker"></span><%= ip1 %><!-- 140.112.xx -->
-              </div>
-              <div>
-                <span class="glyphicon glyphicon-map-marker"></span><%= ip2 %><!-- 140.112.xx -->
-              </div>
-              <div>
-                <span class="glyphicon glyphicon-map-marker"></span><%= ip3 %><!-- 140.112.xx -->
-              </div>
+                <div>
+                  <span class="glyphicon glyphicon-map-marker"></span><%= ip %><!-- 140.112.xx -->
+                </div>
               </div>
             </div>  <!-- col-md-3 -->
             <div class="col-md-3 main s20">
               <div>
                 <span class="glyphicon glyphicon-tag yellow"></span>發
                 <span class="label label-danger left">
-                  <%= postNum %><!-- 41 -->
+                  = postNum <!-- 41 -->
                 </span>
               </div>
               <div>
                 <span class="glyphicon glyphicon-tag yellow"></span>推
                 <span class="label label-danger left">
-                  <%= pushNum %><!-- 19 -->
+                  = pushNum <!-- 19 -->
                 </span>
               </div>
               <div>
                 <span class="glyphicon glyphicon-tag red"></span>噓
                 <span class="label label-danger left">
-                  <%= xuNum %><!-- 50 -->
+                  = xuNum <!-- 50 -->
                 </span>
               </div>
             </div> <!-- col-md-3 -->
@@ -70,7 +64,7 @@
               <div>
                 人氣
                 <span class="label label-danger left">
-                  <%= fansNum %><!-- 41 -->
+                  = fansNum <!-- 41 -->
                 </span>
               </div>
             </div> <!-- col-md-3 -->
@@ -103,38 +97,47 @@
                 <table class="table ">
                     <tbody>
 
-                      <% for (var i=0;i<(POST.length);i++) {%>
+                      <% for (var i=0;i<(list.length);i++) {%>
 
                         <tr>
                           <td> <span class="glyphicon glyphicon-hand-right"></span></td>
                             <td class="fontt">
-                              <%= POST[i].bbs %> 
+                              <%= list[i].bbs %> 
                             </td>
-                              <% if (POST[i].ip==undefined) { %>
+                              <% if (list[i].ip==undefined) { %>
+                                
                                 <td class="fontt yellow">發
                                 </td>
+
                               <% } else {%>    
-                                <% if (POST[i].res[0]==1) { %>
+                                <% if (list[i].res[0]==1) { %>
+                                  
                                   <td class="fontt yellow">推
                                   </td>
-                                <% } else if (POST[i].res[1]==1) { %>
+
+                                <% } else if (list[i].res[1]==1) { %>
+                                 
                                   <td class="fontt red">噓
                                   </td>
-                                <%  } else if (POST[i].res[2]==1) { %>
+
+                                <%  } else if (list[i].res[2]==1) { %>
+                                  
                                   <td class="fontt red">→
                                   </td>
+
                                 <% } %>
                               <% } %>
+                              
                             <td class="">
                                 <div class="fonttt text-left">
-                                  <a class="various fancybox.iframe" href="
-                                  <%= POST[i].url %>
-                                  ">
-                                  <%= POST[i].title %>
+                                  <a class="various fancybox.iframe" href='
+                                  <%= list[i].url %>
+                                  '>
+                                  <%= list[i].title %>
                                   </a></div>
                                 <div class="grey text-left">
                                   <cite>
-                                    <%= POST[i].time %>
+                                    <%= list[i].time %>
                                   </cite>
                                 </div>
                             </td>
