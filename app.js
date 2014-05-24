@@ -13,11 +13,16 @@ var passport = require('passport');
 var fs = require('fs');
 var data = fs.readFileSync('models/db/gossip1.json');
 var tdata = JSON.parse(data);
+console.log("Name List: ");
+var nn;
+for( nn=0; nn<tdata.length; nn++){
+	console.log(tdata[nn].id);
+}
 // console.log(typeof(tdata));
 // console.log(tdata[0].id);
-console.log(tdata.length);
-console.log(tdata[1].POST.length);
-console.log(tdata[1].REPO.length);
+// console.log(tdata.length);
+// console.log(tdata[1].POST.length);
+// console.log(tdata[1].REPO.length);
 // console.log(data.toString());
 
 
@@ -81,7 +86,21 @@ app.get('/search/:id', function(req, res){
   //sortTime(list[0].time, list[1].time);
 
   // res.json(list);
-  res.render('main', {id: tdata[id_itr].id, ip: tdata[id_itr].ip, list: list});
+  var tg=0, tb=0, tgb_itr;
+  for(tgb_itr=0; tgb_itr<tdata[id_itr].REPO.length; tgb_itr++){
+  	tg += tdata[id_itr].REPO[tgb_itr].res[0];
+  	tb += tdata[id_itr].REPO[tgb_itr].res[1];
+  	//console.log(tdata[id_itr].REPO[tgb_itr].res);
+  }
+  var ip;
+  if( tdata[id_itr].POST.length > 0){
+  	ip = tdata[id_itr].POST[0].ip;
+  }
+  else {
+  	ip = "0.0.0.0";
+  }
+  res.render('main', {id: tdata[id_itr].id, ip: ip, tp:tdata[id_itr].POST.length, tg: tg, tb: tb, list: list});
+  //res.json({id: tdata[id_itr].id, ip: tdata[id_itr].POST[0].ip, tp:tdata[id_itr].POST.length, tg: tg, tb: tb, list: list});
 });
 
 
