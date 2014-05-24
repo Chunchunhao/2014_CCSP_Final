@@ -118,19 +118,19 @@
               <div>
                 <span class="glyphicon glyphicon-tag yellow"></span>發
                 <span class="label label-danger left">
-                  <!-- = postNum --> 4
+                  <%= totalpost %>
                 </span>
               </div>
               <div>
                 <span class="glyphicon glyphicon-tag yellow"></span>推
                 <span class="label label-danger left">
-                  <!-- = pushNum --> 6
+                  <%= totalgood %>
                 </span>
               </div>
               <div>
                 <span class="glyphicon glyphicon-tag red"></span>噓
                 <span class="label label-danger left">
-                  <!-- = xuNum  -->10
+                  <%= totalbad %>
                 </span>
               </div>
             </div> <!-- col-md-3 -->
@@ -184,22 +184,22 @@
                                 </td>
 
                               <% } else {%>    
-                                <% if (list[i].res[0]==1) { %>
+                                <% if (list[i].res[0]>list[i].res[1]) { %>
                                   
                                   <td class="fontt yellow">推
                                   </td>
 
-                                <% } else if (list[i].res[1]==1) { %>
-                                 
-                                  <td class="fontt red">噓
-                                  </td>
-
-                                <%  } else if (list[i].res[2]==1) { %>
+                                <%  } else if (list[i].res[0]===list[i].res[1]) { %>
                                   
                                   <td class="fontt red">→
                                   </td>
 
-                                <% } %>
+                                <% } else { %>
+                                 
+                                  <td class="fontt red">噓
+                                  </td>
+
+                                 <% } %>
                               <% } %>
 
                             <td class="">

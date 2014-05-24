@@ -1,8 +1,7 @@
 var txt=$('#txt_name');
 var search=$('#search');
-var btn=$('#button2');
 
-search.on('click', function(){
+(search).on('click', function(){
 	console.log(txt.val());
 	uurl='/search/'+txt.val();
 	$.ajax({
