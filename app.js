@@ -79,7 +79,8 @@ app.get('/s/:id', function(req, res){
   
   //sortTime(list[0].time, list[1].time);
 
-  res.json(list);
+  // res.json(list);
+  res.render('main', {list: list});
 });
 
 
