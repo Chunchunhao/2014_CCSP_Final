@@ -1,13 +1,15 @@
 var txt=$('#txt_name');
 var search=$('#search');
+var btn=$('#button2');
 
 search.on('click', function(){
 	console.log(txt.val());
+	uurl='/search/'+txt.val();
 	$.ajax({
 		type:'GET',
-		url:'/s/'+txt.val(),
 		success:function(result){
 			console.log("search success");
+			window.location=uurl;
 		}
 	});
 });

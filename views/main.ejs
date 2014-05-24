@@ -118,19 +118,19 @@
               <div>
                 <span class="glyphicon glyphicon-tag yellow"></span>發
                 <span class="label label-danger left">
-                  = postNum <!-- 41 -->
+                  <!-- = postNum --> 4
                 </span>
               </div>
               <div>
                 <span class="glyphicon glyphicon-tag yellow"></span>推
                 <span class="label label-danger left">
-                  = pushNum <!-- 19 -->
+                  <!-- = pushNum --> 6
                 </span>
               </div>
               <div>
                 <span class="glyphicon glyphicon-tag red"></span>噓
                 <span class="label label-danger left">
-                  = xuNum <!-- 50 -->
+                  <!-- = xuNum  -->10
                 </span>
               </div>
             </div> <!-- col-md-3 -->
@@ -138,7 +138,7 @@
               <div>
                 人氣
                 <span class="label label-danger left">
-                  = fansNum <!-- 41 -->
+                  <!-- = fansNum --> 3
                 </span>
               </div>
             </div> <!-- col-md-3 -->
@@ -178,7 +178,7 @@
                             <td class="fontt">
                               <%= list[i].bbs %> 
                             </td>
-                              <% if (list[i].ip==undefined) { %>
+                              <% if (list[i].ip!=undefined) { %>
                                 
                                 <td class="fontt yellow">發
                                 </td>
@@ -201,7 +201,7 @@
 
                                 <% } %>
                               <% } %>
-                              
+
                             <td class="">
                                 <div class="fonttt text-left">
                                   <a class="various fancybox.iframe" href='
