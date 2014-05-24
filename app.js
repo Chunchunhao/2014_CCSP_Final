@@ -80,7 +80,7 @@ app.get('/s/:id', function(req, res){
   //sortTime(list[0].time, list[1].time);
 
   // res.json(list);
-  res.render('main', {list: list});
+  res.render('main', {id: tdata[id_itr].id, ip: tdata[id_itr].ip, list: list});
 });
 
 
