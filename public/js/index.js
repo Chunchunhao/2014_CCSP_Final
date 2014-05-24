@@ -5,7 +5,7 @@ search.on('click', function(){
 	console.log(txt.val());
 	$.ajax({
 		type:'GET',
-		url:'/search/'+txt.val(),
+		url:'/s/'+txt.val(),
 		success:function(result){
 			console.log("search success");
 		}

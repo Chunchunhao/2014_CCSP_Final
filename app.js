@@ -49,7 +49,7 @@ app.use(passport.session());
 app.use(flash());
 
 app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join('/', 'public')));
 
 // development only
 if ('development' == app.get('env')) {
