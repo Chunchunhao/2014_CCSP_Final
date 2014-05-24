@@ -49,7 +49,8 @@ app.use(passport.session());
 app.use(flash());
 
 app.use(app.router);
-app.use(express.static(path.join('/', 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/search/', express.static(path.join(__dirname, 'public')));
 
 // development only
 if ('development' == app.get('env')) {
@@ -60,7 +61,7 @@ app.get('/', function(req, res){
   res.render('index');
 });
 
-app.get('/s/:id', function(req, res){
+app.get('/search/:id', function(req, res){
   if(0 <= req.params.id) {
       res.statusCode = 404;
     return res.send('Error 404: No quote found');
