@@ -26,11 +26,11 @@ for( nn=0; nn<tdata.length; nn++){
 // console.log(data.toString());
 
 
-// require('./models/db.js'); // TODO [DB] : Connect to database
+// require('./models/db'); // TODO [DB] : Connect to database
 // require('./controllers/passport.js'); // TODO [FB] : Passport configuration
 
 var app = express();
-// var Vote = mongoose.model('Vote'); // TODO [DB] : Get Vote model
+// var user = mongoose.model('user'); // TODO [DB] : Get Vote model
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -71,6 +71,8 @@ app.get('/search/:id', function(req, res){
       res.statusCode = 404;
     return res.send('Error 404: No quote found');
   };
+
+// ---
   var id_itr;
   for( id_itr=0; id_itr<tdata.length; id_itr++)
     if( req.params.id === tdata[id_itr].id) break;
@@ -78,6 +80,13 @@ app.get('/search/:id', function(req, res){
     res.statusCode = 404;
     return res.send('Error 404: No quote found');
   }
+// ---
+
+//   var tdata = Model.find({ 'id': 'ieyfung' }, function (err, docs) {
+//   // docs is an array
+// });
+
+// ---
   var list = tdata[id_itr].POST.concat(tdata[id_itr].REPO);
   // var times_itr;
   // for( times_itr=0; times_itr<list.length; times_itr++)
@@ -100,7 +109,9 @@ app.get('/search/:id', function(req, res){
   	ip = "0.0.0.0";
   }
   res.render('main', {id: tdata[id_itr].id, ip: ip, tp:tdata[id_itr].POST.length, tg: tg, tb: tb, list: list});
-  //res.json({id: tdata[id_itr].id, ip: tdata[id_itr].POST[0].ip, tp:tdata[id_itr].POST.length, tg: tg, tb: tb, list: list});
+// ---
+  res.json({id: tdata[id_itr].id, ip: tdata[id_itr].POST[0].ip, tp:tdata[id_itr].POST.length, tg: tg, tb: tb, list: list});
+   // res.json(tdata)
 });
 
 
