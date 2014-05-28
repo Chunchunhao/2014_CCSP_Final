@@ -116,10 +116,11 @@ hr{
 }
 
 .fontt,.fonttt,.red{
-/*  font-size: medium;
-*/}
+  font-size: medium;
+}
 .grey{
-  font-size: small;
+  /*font-size: small;*/
+  font-size: x-small;
 }
 
 

@@ -404,7 +404,7 @@ text-shadow:0px 0px 0 rgb(184,184,184),1px 1px 0 rgb(163,163,163),2px 2px 0 rgb(
 .imgDown{
   width:30px;
   margin-top: 60px;
-  opacity:0.7;
+  opacity:0.3;
 }
 
 @media(max-width: 768px) {
