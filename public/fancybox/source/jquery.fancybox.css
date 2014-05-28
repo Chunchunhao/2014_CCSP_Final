@@ -199,15 +199,22 @@
 }
 
 /* Title helper */
-
 .fancybox-title {
+    font-size: 20px;
+    color: black;	
+    text-align: left;
+    visibility:visible;
+}
+
+
+/*.fancybox-title {
 	visibility: hidden;
 	font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
 	position: relative;
 	text-shadow: none;
 	z-index: 8050;
 }
-
+*/
 .fancybox-opened .fancybox-title {
 	visibility: visible;
 }

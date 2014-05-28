@@ -30,44 +30,33 @@
   <link rel="stylesheet" type="text/css" href="./fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
   </head>
 
-  <body>
+  <body id="top">
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <!-- navbar-default -->
       <div class="container">
-        <div class="navbar-header">
+        <div class="navbar-header page-scroll">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">        
+          <a class="navbar-brand" href="#top">        
             <img src="./images/title.png" class="imgTitle" alt="gggg">
           </a>
+          <div class="navbar-form navbar-left llll" >
+            <input type="text" class="form-control" placeholder="Search Ptt id" id="txt_name2">
+          </div>
+
         </div>
         <div class="navbar-collapse collapse">
 
             <!-- <div class="input-group input-group-sm"> -->
-              <form class="navbar-form navbar-left llll">
-                <input type="text" class="form-control" placeholder="Search Ptt id">
-              </form>
             <!-- </div> -->
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
+            <li class="page-scroll"><a href="#top">Home</a></li>
+            <li class="page-scroll"><a href="#num1">About</a></li>
+            <li class="page-scroll"><a href="#num2">Contact</a></li>
           </ul>
           
         </div><!--/.nav-collapse -->
@@ -79,9 +68,9 @@
   <li class="active"><a href="#home" data-toggle="tab"><span class="glyphicon glyphicon-user "></span>
     <%= id %><!-- email5566 --></a>
   </li>
-  <li><a href="#profile" data-toggle="tab">people1</a></li>
+<!--   <li><a href="#profile" data-toggle="tab">people1</a></li>
   <li><a href="#messages" data-toggle="tab">people2</a></li>
-</ul>
+ --></ul>
 
 
 <!-- Tab panes -->
@@ -110,7 +99,8 @@
             <div class="col-md-3 main s20">
               <div class="">
                 <div>
-                  <span class="glyphicon glyphicon-map-marker"></span><%= ip %><!-- 140.112.xx -->
+                  <span class="glyphicon glyphicon-map-marker"></span>
+                  <%= ip %><!-- 140.112.xx -->
                 </div>
               </div>
             </div>  <!-- col-md-3 -->
@@ -118,19 +108,19 @@
               <div>
                 <span class="glyphicon glyphicon-tag yellow"></span>發
                 <span class="label label-danger left">
-                  <%= totalpost %>
+                  <%= tp %>
                 </span>
               </div>
               <div>
                 <span class="glyphicon glyphicon-tag yellow"></span>推
                 <span class="label label-danger left">
-                  <%= totalgood %>
+                  <%= tg %>
                 </span>
               </div>
               <div>
                 <span class="glyphicon glyphicon-tag red"></span>噓
                 <span class="label label-danger left">
-                  <%= totalbad %>
+                  <%= tb %>
                 </span>
               </div>
             </div> <!-- col-md-3 -->
@@ -154,7 +144,24 @@
           <div class="col-md-1 top main">
             <div class="borr">
               <div class="ffff">
-                <span class="glyphicon glyphicon-stats"></span>
+                <ul>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <span class="glyphicon glyphicon-stats"></span> <!-- <b class="caret"></b> -->
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">噓推發文數比較</a></li>
+                      <li><a href="#">發文時間比較</a></li>
+                      <li><a href="#">不同版的活躍程度比較</a></li>
+                      <li><a href="#">與羣衆意見相識度比較</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">發文得到的推噓比</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">個人積分榜</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                  
               </div> <!-- page-header -->
             </div>
           </div>
@@ -166,7 +173,7 @@
 <!-- ================================================= -->
       <div class="row top">
         <div class="col-md-8 ">
-          <div class="col-md-8 col-md-offset-1 ">
+          <div class="col-md-12 col-md-offset-1 ">
             <div class="table-responsive top">
                 <table class="table ">
                     <tbody>
@@ -204,9 +211,7 @@
 
                             <td class="">
                                 <div class="fonttt text-left">
-                                  <a class="various fancybox.iframe" href='
-                                  <%= list[i].url %>
-                                  '>
+                                  <a class="various fancybox.iframe" href='<%= list[i].url%>' title='正在搜尋的id：<%= id %>'>
                                   <%= list[i].title %>
                                   </a></div>
                                 <div class="grey text-left">

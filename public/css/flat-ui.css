@@ -1919,7 +1919,7 @@ fieldset[disabled] .input-group-btn .btn-default.active {
   .container-fluid > .navbar-header,
   .container > .navbar-collapse,
   .container-fluid > .navbar-collapse {
-    margin-right: 0;
+    margin-right: 5%;
     margin-left: 0;
   }
 }
@@ -2096,6 +2096,17 @@ select[multiple].navbar-input {
   line-height: 1.4;
   border-radius: 6px;
 }
+
+@media (max-width:768px) {
+  
+  .navbar-form .form-control,
+  .navbar-form .input-group-addon,
+  .navbar-form .btn {
+    width: 40%;
+    margin-left:20px;
+  }
+}
+
 select.navbar-form .form-control,
 select.navbar-form .input-group-addon,
 select.navbar-form .btn {

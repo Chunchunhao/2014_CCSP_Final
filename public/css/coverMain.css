@@ -51,7 +51,7 @@ hr{
 }
 
 .imgTitle {
-  width:8%;
+  width:100px;
   position: absolute;
   margin-top: -13px;
 }
@@ -109,16 +109,23 @@ hr{
 }
 
 .fonttt{
-  font-size:20px;
   color:#FFFFFF;
-
 }
+.red{
+  color:red;
+}
+
+.fontt,.fonttt,.red{
+  font-size: medium;
+}
+.grey{
+  font-size: x-small;
+}
+
+
 .fook{
   font-family: "文泉驛微米黑", "微軟正黑體", sans-serif;
 }
- .red{
-  color:red;
- }
 
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -369,11 +376,12 @@ text-shadow:0px 0px 0 rgb(184,184,184),1px 1px 0 rgb(163,163,163),2px 2px 0 rgb(
 }
 
 .borr{
-  /*width:40%;*/
-  height:100%;
-  background-color: rgba(101,103,107,1);
+  width:60px;
+/*  height:100%;
+*/  background-color: rgba(101,103,107,1);
   border-radius: 3px;
-
+  margin-left: auto;
+  margin-right:auto;
 }
 
 .arrow-up{
@@ -383,3 +391,7 @@ text-shadow:0px 0px 0 rgb(184,184,184),1px 1px 0 rgb(163,163,163),2px 2px 0 rgb(
     display: inline-block;
 }
 
+ul { 
+  list-style-type: none; 
+  padding-left: 0px; 
+}
