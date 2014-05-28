@@ -88,11 +88,6 @@ app.get('/search/:id', function(req, res){
 
 // ---
   var list = tdata[id_itr].POST.concat(tdata[id_itr].REPO);
-  // var times_itr;
-  // for( times_itr=0; times_itr<list.length; times_itr++)
-  //   list[times_itr].time = toSecond(list[times_itr].time);
-  
-  //sortTime(list[0].time, list[1].time);
 
   // res.json(list);
   var tg=0, tb=0, tgb_itr;
@@ -110,7 +105,7 @@ app.get('/search/:id', function(req, res){
   }
   res.render('main', {id: tdata[id_itr].id, ip: ip, tp:tdata[id_itr].POST.length, tg: tg, tb: tb, list: list});
 // ---
-  res.json({id: tdata[id_itr].id, ip: tdata[id_itr].POST[0].ip, tp:tdata[id_itr].POST.length, tg: tg, tb: tb, list: list});
+  // res.json({id: tdata[id_itr].id, ip: tdata[id_itr].POST[0].ip, tp:tdata[id_itr].POST.length, tg: tg, tb: tb, list: list});
    // res.json(tdata)
 });
 
@@ -120,12 +115,3 @@ http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
-
-
-// function sortTime( time1, time2){
-//   var res1=time1.split(" ");
-//   var res2=time2.split(" ");
-//   console.log(res1);
-//   console.log(res2);
-
-// }
