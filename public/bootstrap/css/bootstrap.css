@@ -4290,8 +4290,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   line-height: 1;
   color: #fff;
   text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
+/*  white-space: nowrap;
+*/  vertical-align: baseline;
   border-radius: .25em;
 }
 .label[href]:hover,

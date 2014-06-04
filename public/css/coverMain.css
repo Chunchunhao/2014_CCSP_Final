@@ -101,6 +101,10 @@ hr{
 */  color:#777;
 }
 
+.green{
+  color:  #05fa98;
+}
+
 .yellow{
   color:#FFD700;
 }
@@ -115,7 +119,7 @@ hr{
   color:red;
 }
 
-.fontt,.fonttt,.red{
+.fontt,.fonttt{
   font-size: medium;
 }
 .grey{
@@ -221,6 +225,11 @@ hr{
   margin-right: auto;
 /*  border: 3px solid white;  
 */}
+.cover2{
+  margin-top: 0px;
+  width:85%;
+}
+
 .coverJ{
   width:60%;
 }

@@ -63,7 +63,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="page-scroll"><a href="/">Home</a></li>
             <li class="page-scroll"><a href="/#num1">About</a></li>
-            <li class="page-scroll"><a href="#num2">Contact</a></li>
+            <li class="page-scroll"><a href="/#num2">Contact</a></li>
           </ul>
           
         </div><!--/.nav-collapse -->
@@ -72,19 +72,17 @@
 
 
 <ul class="nav nav-tabs topp cover">
-  <li class="active"><a href="#home" data-toggle="tab"><span class="glyphicon glyphicon-user "></span>
-    <%= id %><!-- email5566 --></a>
+  <li class="active"><a  data-toggle="tab"><span class="glyphicon glyphicon-user "></span>
+    <%= id %></a>
   </li>
-<!--   <li><a href="#profile" data-toggle="tab">people1</a></li>
-  <li><a href="#messages" data-toggle="tab">people2</a></li>
- --></ul>
+</ul>
 
 
 <!-- Tab panes -->
-<div class="tab-content">
+<!-- <div class="tab-content">
   <div class="tab-pane active" id="home">
-    <div class="arrow-up"></div>
-    <div class="container-fluid">
+ -->    
+  <div class="container-fluid">
 
 
 <!-- data -->
@@ -103,7 +101,7 @@
                 </div> <!-- page-header -->
               </div>
             </div>
-            <div class="col-md-3 main s20">
+            <div class="col-md-4 main s20">
               <div class="">
                 <div>
                   <span class="glyphicon glyphicon-map-marker"></span>
@@ -113,7 +111,7 @@
             </div>  <!-- col-md-3 -->
             <div class="col-md-3 main s20">
               <div>
-                <span class="glyphicon glyphicon-tag yellow"></span>發
+                <span class="glyphicon glyphicon-tag green"></span>發
                 <span class="label label-danger left">
                   <%= tp %>
                 </span>
@@ -131,7 +129,7 @@
                 </span>
               </div>
             </div> <!-- col-md-3 -->
-            <div class="col-md-3 main s20">
+            <div class="col-md-2 main s20">
               <div>
                 人氣
                 <span class="label label-danger left">
@@ -181,12 +179,44 @@
       <div class="row top">
         <div class="col-md-8 ">
           <div class="col-md-12 col-md-offset-1 ">
-            <div class="table-responsive top">
-                <table class="table ">
+            <ul class="nav nav-tabs cover2">
+              <li class="active"><a href="#all" data-toggle="tab" class="">
+                所有文章                  
+                <span class="label label-danger">
+                        <%= tp+tg+tb %>
+                </span>
+              </a>
+              </li>
+              <li class="">
+                <a href="#post" data-toggle="tab" class="green">
+                  發文               
+                  <span class="label label-danger">
+                      <%= tp %>
+                  </span>
+                </a>
+              </li>
+              <li class=""><a href="#push" data-toggle="tab" class="yellow">
+                推文
+                <span class="label label-danger">
+                  <%= tg %>
+                </span>
+              </a>
+              </li>
+              <li class=""><a href="#xu" data-toggle="tab" class="red">
+                噓文
+                <span class="label label-danger">
+                  <%= tb %>
+                </span>
+              </a>
+              </li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="all">
+                <div class="table-responsive top">
+                  <table class="table ">
                     <tbody>
-
                       <% for (var i=0;i<(list.length);i++) {%>
-
                         <tr>
                           <td> <span class="glyphicon glyphicon-hand-right"></span></td>
                             <td class="fontt">
@@ -194,7 +224,7 @@
                             </td>
                               <% if (list[i].ip!=undefined) { %>
                                 
-                                <td class="fontt yellow">發
+                                <td class="fontt green">發
                                 </td>
 
                               <% } else {%>    
@@ -234,18 +264,137 @@
                     
                 </table>
               </div>  <!-- table -->
+
+              </div>
+              <div class="tab-pane" id="post">
+                <div class="table-responsive top">
+                  <table class="table ">
+                    <tbody>
+                      <% for (var i=0;i<(list.length);i++) {%>
+                        <% if (list[i].ip!=undefined) { %>
+                          <tr>
+                            <td> <span class="glyphicon glyphicon-hand-right"></span></td>
+                              <td class="fontt">
+                                <%= list[i].bbs %> 
+                              </td>
+                                  <td class="fontt green">發
+                                  </td>
+                              <td class="">
+                                  <div class="fonttt text-left">
+                                    <a class="various fancybox.iframe" href='<%= list[i].url%>' title='正在搜尋的id：<%= id %>'>
+                                    <%= list[i].title %>
+                                    </a></div>
+                                  <div class="grey text-left">
+                                    <cite>
+                                      <%= list[i].time %>
+                                    </cite>
+                                  </div>
+                              </td>
+                          </tr>
+                          <% } %> <!-- if post-->
+                      <% } %> <!-- for loop -->
+                    </tbody>
+                    
+                </table>
+              </div>  <!-- table -->
+
+
+              </div>
+              <div class="tab-pane" id="push">
+                <div class="table-responsive top">
+                  <table class="table ">
+                    <tbody>
+                      <% for (var i=0;i<(list.length);i++) {%>
+                        <% if (list[i].ip==undefined) { %>
+                          <% if (list[i].res[0]>list[i].res[1]) { %>
+                            <tr>
+                              <td> <span class="glyphicon glyphicon-hand-right"></span></td>
+                              <td class="fontt">
+                                  <%= list[i].bbs %> 
+                              </td>
+                              <td class="fontt yellow"> 推
+                              </td>
+                              <td class="">
+                                <div class="fonttt text-left">
+                                  <a class="various fancybox.iframe" href='<%= list[i].url%>' title='正在搜尋的id：<%= id %>'>
+                                  <%= list[i].title %>
+                                  </a></div>
+                                <div class="grey text-left">
+                                  <cite>
+                                    <%= list[i].time %>
+                                  </cite>
+                                </div>
+                              </td>
+                            </tr>
+                          <% } %>  <!-- if  -->
+                        <% } %>  <!-- if push -->
+                      <% } %>  <!-- for loop -->
+                    </tbody>
+                    
+                </table>
+              </div>  <!-- table -->
+
+
+              </div>
+              <div class="tab-pane" id="xu">
+                <div class="table-responsive top">
+                  <table class="table ">
+                    <tbody>
+                      <% for (var i=0;i<(list.length);i++) {%>
+                        <% if (list[i].ip==undefined) { %>
+                          <% if (list[i].res[0]<=list[i].res[1]) { %>
+                            <tr>
+                              <td> <span class="glyphicon glyphicon-hand-right"></span></td>
+                              <td class="fontt">
+                                <%= list[i].bbs %> 
+                              </td>
+                            <%  if (list[i].res[0]===list[i].res[1]) { %>
+                              <td class="fontt red">
+                                →
+                              </td>
+                              <td class="">
+                            <% } else { %>
+                              <td class="fontt red">
+                                噓
+                              </td>
+                              <td class="">
+                            <% } %>
+                              <div class="fonttt text-left">
+                                <a class="various fancybox.iframe" href='<%= list[i].url%>' title='正在搜尋的id：<%= id %>'>
+                                  <%= list[i].title %>
+                                </a>
+                              </div>
+                              <div class="grey text-left">
+                                <cite>
+                                  <%= list[i].time %>
+                                </cite>
+                              </div>
+                              </td>
+                            </tr>
+                          <% } %>
+                        <% } %> <!-- if -->
+                      <% } %> <!-- for -->
+                    </tbody>
+                    
+                </table>
+              </div>  <!-- table -->
+
+
+              </div>
+            </div>
+
             </div> <!-- col-md-12 table data container -->
           </div> <!-- col-md-8 table container-->
         </div> <!-- row -->
       </div>  <!-- bb background -->
     </div> <!-- container-fluid -->
-  </div> <!-- home -->
+  <!-- </div> --> <!-- home -->
 
-  <div class="tab-pane" id="profile">...</div>
+<!--   <div class="tab-pane" id="profile">...</div>
   <div class="tab-pane" id="messages">...</div>
-  <div class="tab-pane" id="settings">...</div>
-</div>
+ -->
 
+<!-- </div> --> <!-- tab-content -->
 
 
     <!-- Bootstrap core JavaScript
@@ -269,9 +418,10 @@
 
  <!-- =====my js==== -->
   <script type="text/javascript" src="./js/index.js"></script>
+
   <!-- semantic js -->
-    <script type="text/javascript" src="message box/public/packaged/javascript/semantic.js"></script>
-    <script type="text/javascript" src="message box/public/javascripts/index.js"></script>
+   <!-- <script type="text/javascript" src="message box/public/packaged/javascript/semantic.js"></script>
+  // <script type="text/javascript" src="message box/public/javascripts/index.js"></script> -->
 
 
 <!-- fancy box============================================== -->
