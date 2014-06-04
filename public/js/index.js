@@ -128,7 +128,7 @@ $(function () {
         },
         series: [{
             type: 'pie',
-            name: 'Browser share',
+            name: '百分比',
             data: [
                 ['發文數',   tp],
                 ['推文數',   tg],
@@ -137,14 +137,15 @@ $(function () {
         }]
     });
 });
-    
+
+tArray=document.getElementsByTagName("cite");
+ttA=[];
+for (var i=0;i<tArray.length;i++){
+	ttA.push([Date.parse(tArray[i].innerText),1]);
+}
+
 // console.log(ttA[0]);
 $(function () {
-	var tArray=document.getElementsByTagName("cite");
-	var ttA=[];
-	for (var i=0;i<tArray.length;i++){
-		ttA.push([Date.parse(tArray[i].innerText),1]);
-	}
 
     
     	$('#highCT').highcharts({
