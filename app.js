@@ -135,7 +135,7 @@ app.get('/1/:id', function(req, res){
       var ddd2 = JSON.parse(ccc2);
       tp += ddd2.length;
       for( var eee in ddd2){
-        ff.push(ddd1[eee]);
+        ff.push(ddd2[eee]);
         if( ddd2[eee].ip.length > 0){
           ipp = ddd2[eee].ip;
         }
@@ -221,7 +221,7 @@ app.get('/search/:id', function(req, res){
       var ddd2 = JSON.parse(ccc2);
       tp += ddd2.length;
       for( var eee in ddd2){
-        ff.push(ddd1[eee]);
+        ff.push(ddd2[eee]);
         if( ddd2[eee].ip.length > 0){
           ipp = ddd2[eee].ip;
         }
