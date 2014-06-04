@@ -92,4 +92,97 @@ $(document).ready(function() {
 	});
 });
 
+var ta=parseInt(document.getElementById("taa").innerHTML);
+var tp=parseInt(document.getElementById("tpp").innerHTML);
+var tg=parseInt(document.getElementById("tgg").innerHTML);
+var tb=parseInt(document.getElementById("tbb").innerHTML);
+tp=tp/ta;
+tg=tg/ta;
+tb=tb/ta;
+console.log(tp);
+$(function () {
+    $('#highC').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        title: {
+            text: '發/推/噓文數比較'
+        },
+        tooltip: {
+    	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Browser share',
+            data: [
+                ['發文數',   tp],
+                ['推文數',   tg],
+                ['噓文數',   tb]
+            ]
+        }]
+    });
+});
+    
+// console.log(ttA[0]);
+$(function () {
+	var tArray=document.getElementsByTagName("cite");
+	var ttA=[];
+	for (var i=0;i<tArray.length;i++){
+		ttA.push([Date.parse(tArray[i].innerText),1]);
+	}
 
+    
+    	$('#highCT').highcharts({
+    	
+		    title: {
+		        text: ''
+		    },
+		
+		    xAxis: {
+		        type: 'datetime'
+		    },
+		    
+		    yAxis: {
+		        title: {
+		            text: null
+		        }
+		    },
+		
+		    tooltip: {
+		        crosshairs: true,
+		        // shared: true,
+		        valueSuffix: 'time'
+		    },
+		    
+		    legend: {
+		    },
+		
+		    series: [{
+		    	name: '發表文章',
+		    	data: ttA,
+		    	zIndex: 1,
+		    	marker: {
+		    		fillColor: 'white',
+		    		lineWidth: 2,
+		    		lineColor: Highcharts.getOptions().colors[0]
+		    	}
+		    }]
+		
+		});
+    
+});

@@ -77,7 +77,6 @@
   </li>
 </ul>
 
-
 <!-- Tab panes -->
 <!-- <div class="tab-content">
   <div class="tab-pane active" id="home">
@@ -182,7 +181,7 @@
             <ul class="nav nav-tabs cover2">
               <li class="active"><a href="#all" data-toggle="tab" class="">
                 所有文章                  
-                <span class="label label-danger">
+                <span class="label label-danger" id="taa">
                         <%= tp+tg+tb %>
                 </span>
               </a>
@@ -190,21 +189,21 @@
               <li class="">
                 <a href="#post" data-toggle="tab" class="green">
                   發文               
-                  <span class="label label-danger">
+                  <span class="label label-danger" id="tpp">
                       <%= tp %>
                   </span>
                 </a>
               </li>
               <li class=""><a href="#push" data-toggle="tab" class="yellow">
                 推文
-                <span class="label label-danger">
+                <span class="label label-danger" id="tgg">
                   <%= tg %>
                 </span>
               </a>
               </li>
               <li class=""><a href="#xu" data-toggle="tab" class="red">
                 噓文
-                <span class="label label-danger">
+                <span class="label label-danger" id="tbb">
                   <%= tb %>
                 </span>
               </a>
@@ -381,10 +380,15 @@
 
 
               </div>
-            </div>
+            </div> <!-- tab-content -->
 
             </div> <!-- col-md-12 table data container -->
           </div> <!-- col-md-8 table container-->
+          <div class="col-md-4 ">
+            <div id="highC" style="min-width: 310px; height: 300px; max-width: 300px; margin: 0 auto"></div>
+<!--             <div id="highCT" style="min-width: 200px; height: 150px;max-width: 400px; margin: 0 auto"></div>
+ -->          
+          </div>
         </div> <!-- row -->
       </div>  <!-- bb background -->
     </div> <!-- container-fluid -->
@@ -418,6 +422,13 @@
 
  <!-- =====my js==== -->
   <script type="text/javascript" src="./js/index.js"></script>
+
+
+<!-- high chart -->
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+ <script type="text/javascript" src="./js/dark-unica.js"></script>
 
   <!-- semantic js -->
    <!-- <script type="text/javascript" src="message box/public/packaged/javascript/semantic.js"></script>
