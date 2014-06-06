@@ -7,6 +7,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <meta property="fb:admins" content="10202410694372219" />
+    <meta property="fb:app_id" content="1495103744038056"/>
+
     <title>P-book</title>
 
     <!-- Bootstrap core CSS -->
@@ -22,7 +25,7 @@
     <link rel="shortcut icon" href="./images/favicon.ico">
 
 <!-- semantic message box -->
-    <link rel="stylesheet" href="./message box/public/packaged/css/semantic.css" />
+    <link rel="stylesheet" href="./message_box/public/packaged/css/semantic.css" />
 
 
 <!-- ============fancybox=============== -->
@@ -33,11 +36,28 @@
   <!-- Add Thumbnail helper (this is optional) -->
   <link rel="stylesheet" type="text/css" href="./fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
 
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-51720615-1', 'pbook.tw');
+  ga('send', 'pageview');
+
+</script>
 
   </head>
 
   <body id="top">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&appId=799528913391208&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <!-- navbar-default -->
       <div class="container">
@@ -129,29 +149,25 @@
               </div>
             </div> <!-- col-md-3 -->
             <div class="col-md-2 main s20">
-              <div>
-                人氣
-                <span class="label label-danger left">
-                  <!-- = fansNum --> 3
-                </span>
+              <div class="borr ui button" id="open" style="background-color: #34495E; margin-right: -15px">
+                <div class="ffff" style="background-color: #34495E;">
+                  <span class="glyphicon glyphicon-comment" style="color: white; background-color: #34495E; font-size:1.4em; transform:rotate(45deg);">
+                  </span>
+                </div> <!-- page-header -->
               </div>
             </div> <!-- col-md-3 -->
           </div> <!-- col-md-6 container of details -->
 
           <div class="col-md-1 col-md-offset-1 top  main">
-            <div class="borr">
-              <div class="ffff">
-                <span class="glyphicon glyphicon-comment"></span>
-              </div> <!-- page-header -->
-            </div>
           </div>
           <div class="col-md-1 top main">
-            <div class="borr">
+            <!-- <div class="borr">
               <div class="ffff">
                 <ul>
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <span class="glyphicon glyphicon-stats"></span> <!-- <b class="caret"></b> -->
+                      <span class="glyphicon glyphicon-stats"></span> 
+                      // <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
                       <li><a href="#">噓推發文數比較</a></li>
@@ -166,8 +182,9 @@
                   </li>
                 </ul>
                   
-              </div> <!-- page-header -->
-            </div>
+              </div> 
+              // page-header
+            </div> -->
           </div>
 
       </div> <!-- row -->
@@ -176,7 +193,7 @@
 <!-- news part -->
 <!-- ================================================= -->
       <div class="row top">
-        <div class="col-md-8 ">
+        <div class="col-md-8">
           <div class="col-md-12 col-md-offset-1 ">
             <ul class="nav nav-tabs cover2">
               <li class="active"><a href="#all" data-toggle="tab" class="">
@@ -383,9 +400,11 @@
             </div> <!-- tab-content -->
 
             </div> <!-- col-md-12 table data container -->
-          </div> <!-- col-md-8 table container-->
-          <div class="col-md-4 ">
-            <div id="highC" style="min-width: 310px; height: 300px; max-width: 300px; margin: 0 auto"></div>
+        </div> <!-- col-md-8 table container-->
+        <div class="col-md-3" >
+          <div id="highC" style="min-width: 310px; height: 300px; max-width: 300px; margin: 0 auto">
+        </div>
+        <div class="col-md-1" ></div>
 <!--             <div id="highCT" style="min-width: 200px; height: 150px;max-width: 400px; margin: 0 auto"></div>
  -->          
           </div>
@@ -399,7 +418,19 @@
  -->
 
 <!-- </div> --> <!-- tab-content -->
-
+  <div class="ui right sidebar" style="
+  color: white;
+  background: rgba(255,255,255,0.8);">
+    <div style="width:100%; height:100%; padding:0px;">
+        <!--
+        <div class="field">
+          <label>User Input</label>
+          <input type="text" class="enterm">
+        </div>
+        -->
+        <div class="fb-comments" data-href="http://pbook.tw/" data-width="275" data-numposts="5" data-colorscheme="light" style="margin-top:45px"></div>
+    </div>
+  </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -431,8 +462,8 @@
  <script type="text/javascript" src="./js/dark-unica.js"></script>
 
   <!-- semantic js -->
-   <!-- <script type="text/javascript" src="message box/public/packaged/javascript/semantic.js"></script>
-  // <script type="text/javascript" src="message box/public/javascripts/index.js"></script> -->
+   <script type="text/javascript" src="message_box/public/packaged/javascript/semantic.js"></script>
+   <script type="text/javascript" src="message_box/public/javascripts/index.js"></script>
 
 
 <!-- fancy box============================================== -->

@@ -1,6 +1,6 @@
 
-var request = require('/usr/local/lib/node_modules/request'),
-	cheerio = require('/usr/local/lib/node_modules/cheerio'),
+var request = require('./node_modules/request'),
+	cheerio = require('./node_modules/cheerio'),
 	fs      = require('fs');
 
 var PPTPathPrefix = "http://www.ptt.cc",
@@ -13,7 +13,7 @@ var pushArr = [];
 var pageNext, page_count=0, page_total=0;
 
 // Run the scraper! 
-pttTraversal("index", 1);
+pttTraversal(599, 1);
 
 // start_page: 起始頁數 ex. index, 4057.   end_page:結束頁 ex. 4000
 function pttTraversal(start_page, end_page){
@@ -63,7 +63,7 @@ function pttTraversal(start_page, end_page){
 			console.log("lock: " + lock);
 			clearInterval(si);
 			if(this_page == end_page){
-				fs.writeFile('gossip.json', JSON.stringify(pushArr, null, 2), 'utf8', function(err){
+				fs.writeFile('gossip5.json', JSON.stringify(pushArr, null, 2), 'utf8', function(err){
 					if(err){
 						console.log("Write Error");
 						throw err;
@@ -242,7 +242,7 @@ function scrape(url, status){
 
 			if(!response){
 				console.log("Resend Scrape.js at " + url);
-				fs.writeFile('gossip.json', JSON.stringify(pushArr, null, 2), 'utf8', function(err){
+				fs.writeFile('gossip5.json', JSON.stringify(pushArr, null, 2), 'utf8', function(err){
 					if(err){
 						console.log("Write Error");
 						throw err;
