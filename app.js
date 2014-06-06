@@ -86,7 +86,7 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 // app.use > sequential middleware
-app.use(express.favicon()); //As far as I can tell, it loads the /favicon.ico file from your site
+app.use(express.favicon("public/images/favicon.ico")); //As far as I can tell, it loads the /favicon.ico file from your site
                             // (like it would if you have the static handler loaded) but then caches it.
 app.use(express.logger('dev')); // store each http request
 app.use(express.json());
